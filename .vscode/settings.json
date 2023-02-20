@@ -1,0 +1,10 @@
+{
+    "eslint.validate": [
+        "html",
+        "javascript",
+        "javacsriptreact"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+}
