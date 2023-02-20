@@ -5,6 +5,7 @@ import Search from './components/Search';
 
 const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;
 
+// final setword clears and returns the default value after pressing the button
 const App = () => {
   const [word, setWord] = useState('');
 
@@ -19,6 +20,7 @@ const App = () => {
       .catch((err) => {
         console.log(err);
       })
+    setWord('');
   }
  
   return (
