@@ -15,6 +15,7 @@ const App = () => {
 
   console.log(images); //can't be in the function because it'll update asynchronously and be a term behind
 
+  //fetch request
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     fetch(
