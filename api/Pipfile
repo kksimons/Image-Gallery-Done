@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 flask = "==2.2.3"
+requests = "==2.25.1"
 
 [dev-packages]
 
