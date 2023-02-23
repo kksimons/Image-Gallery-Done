@@ -7,11 +7,14 @@ load_dotenv(dotenv_path="./.env.local") #to pull the key locally
 
 UNSPLASH_URL="https://api.unsplash.com/photos/random/"
 UNSPLASH_KEY=os.environ.get("UNSPLASH_KEY", "") #second argument is default
+DEBUG=bool(os.environ.get("DEBUG", True)) #add DEBUG="" to env.local to turn off debug mode as being on be default
 
 if not UNSPLASH_KEY:
     raise EnvironmentError("UNSPLASH_KEY is missing, please create one and put it in .env.local")
 
 app = Flask(__name__)
+
+app.config["DEBUG"] = DEBUG
 
 # if view function in Flask returns a dictionary content-type is autoset to json and returns json object
 @app.route("/new-image")
