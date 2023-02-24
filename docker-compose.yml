@@ -4,7 +4,15 @@ services:
     build: ./frontend
     ports:
       - "3000:3000"
+#allows for changes (mapped to local drive rather than having to rebuild everytime)
+    volumes:
+      - /app/node_modules
+      - ./frontend:/app
+    environment:
+      - CHOKIDAR_USEPOLLING=true
   api:
     build: ./api
     ports:
       - "5050:5050"
+    volumes:
+      - ./api:/app
